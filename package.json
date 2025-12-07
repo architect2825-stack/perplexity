@@ -1,38 +1,35 @@
 {
   "name": "perplexity",
   "version": "1.0.0",
-  "description": "AI-powered research assistant web application",
+  "description": "AI-powered research assistant - full-stack web application",
   "private": true,
-  "type": "module",
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "scripts": {
-    "dev": "concurrently \"cd client && npm run dev\" \"cd server && npm run dev\"",
-    "build": "cd client && npm run build && cd ../server && npm run build",
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\"",
+    "build": "npm run build --workspaces --if-present",
     "start": "cd server && npm start",
-    "test": "cd client && npm run test && cd ../server && npm run test",
-    "lint": "cd client && npm run lint && cd ../server && npm run lint",
-    "format": "cd client && npm run format && cd ../server && npm run format",
-    "install:all": "npm install && cd client && npm install && cd ../server && npm install"
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "prepare": "husky install"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "@types/node": "^20.0.0",
+    "concurrently": "^8.0.0",
+    "husky": "^8.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0"
   },
   "keywords": [
     "ai",
-    "search",
     "research",
+    "search",
     "assistant",
-    "react",
-    "typescript",
-    "nodejs"
+    "perplexity"
   ],
-  "author": "Architect Stack",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/architect2825-stack/perplexity.git"
-  },
-  "bugs": {
-    "url": "https://github.com/architect2825-stack/perplexity/issues"
-  },
-  "homepage": "https://github.com/architect2825-stack/perplexity#readme"
+  "author": "architect2825-stack",
+  "license": "MIT"
 }
