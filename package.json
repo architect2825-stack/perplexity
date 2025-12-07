@@ -1,0 +1,38 @@
+{
+  "name": "perplexity",
+  "version": "1.0.0",
+  "description": "AI-powered research assistant web application",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"cd client && npm run dev\" \"cd server && npm run dev\"",
+    "build": "cd client && npm run build && cd ../server && npm run build",
+    "start": "cd server && npm start",
+    "test": "cd client && npm run test && cd ../server && npm run test",
+    "lint": "cd client && npm run lint && cd ../server && npm run lint",
+    "format": "cd client && npm run format && cd ../server && npm run format",
+    "install:all": "npm install && cd client && npm install && cd ../server && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "ai",
+    "search",
+    "research",
+    "assistant",
+    "react",
+    "typescript",
+    "nodejs"
+  ],
+  "author": "Architect Stack",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/architect2825-stack/perplexity.git"
+  },
+  "bugs": {
+    "url": "https://github.com/architect2825-stack/perplexity/issues"
+  },
+  "homepage": "https://github.com/architect2825-stack/perplexity#readme"
+}
